@@ -170,9 +170,7 @@ classDiagram
     Categoria "1" -- "0..*" Produto
     Fornecedor "1" -- "0..*" Produto
     Produto "0..*" -- "0..*" Veiculo : compatível com
-
-
-### 🔗 Mapeamento JPA
+###  Mapeamento JPA
 | Relacionamento | Tipo | Anotações JPA na Camada de Persistência |
 | :--- | :--- | :--- |
 | **Usuario — Cliente** | 1:1 | `@OneToOne` em Cliente (lado dono)[cite: 27] |
