@@ -1,10 +1,10 @@
-#  PeçaCerta — API de Gestão de Auto Peças
+# 🚗 PeçaCerta — API de Gestão de Auto Peças
 
 Projeto Final da disciplina Programação Web (foco em Backend).[cite: 20] API REST em Java + Spring Boot para controlar catálogo, estoque, compatibilidade com veículos e pedidos de uma loja de peças automotivas.[cite: 20, 21]
 
 **Status:** Etapa 1 (requisitos, modelagem e camada de persistência) — entrega em 26/10/2026, 23h59.[cite: 20]
 
-##  Equipe
+## 👥 Equipe
 | Integrante | Papel |
 | :--- | :--- |
 | **Matheus Reck Schaffer** | Líder (Responsável pelo envio)[cite: 20] |
@@ -13,7 +13,7 @@ Projeto Final da disciplina Programação Web (foco em Backend).[cite: 20] API R
 
 ---
 
-##  Sumário
+## 📑 Sumário
 1. [Visão geral](#1-visão-geral)
 2. [Tecnologias](#2-tecnologias)
 3. [Requisitos funcionais](#3-requisitos-funcionais)
@@ -169,39 +169,4 @@ classDiagram
     Produto "1" -- "0..*" ItemPedido
     Categoria "1" -- "0..*" Produto
     Fornecedor "1" -- "0..*" Produto
-    Produto "0..*" -- "0..*" Veiculo : compatível com```
-
-###  Mapeamento JPA
-| Relacionamento | Tipo | Anotações JPA na Camada de Persistência |
-| :--- | :--- | :--- |
-| **Usuario — Cliente** | 1:1 | `@OneToOne` em Cliente (lado dono)[cite: 27] |
-| **Cliente — Pedido** | 1:N | `@OneToMany` em Cliente / `@ManyToOne` em Pedido[cite: 27] |
-| **Pedido — ItemPedido** | 1:N | `@OneToMany` (cascade=ALL, orphanRemoval) em Pedido / `@ManyToOne` em Item[cite: 27] |
-| **Produto — ItemPedido** | 1:N | `@ManyToOne` em ItemPedido, sem lista em Produto[cite: 27] |
-| **Categoria — Produto** | 1:N | `@OneToMany` em Categoria / `@ManyToOne` em Produto[cite: 27, 28] |
-| **Fornecedor — Produto**| 1:N | `@OneToMany` em Fornecedor / `@ManyToOne` em Produto[cite: 28] |
-| **Produto — Veiculo** | N:M | `@ManyToMany` com `@JoinTable` (`produto_veiculo`) em Produto[cite: 28] |
-
----
-
-## 6. Dicionário de dados
-| Entidade | Campos Principais | Restrições Relevantes |
-| :--- | :--- | :--- |
-| **Usuario** | id, email, senha, perfil, ativo | email único; senha em BCrypt; Enum: ADMIN, ATENDENTE, CLIENTE[cite: 28] |
-| **Cliente** | id, nome, cpf, email, telefone, endereco | CPF único; FK para `usuarios`[cite: 28, 29] |
-| **Categoria** | id, nome, descricao | nome único[cite: 30] |
-| **Fornecedor**| id, razaoSocial, cnpj, email, telefone | CNPJ único[cite: 30] |
-| **Produto** | id, codigo, nome, descricao, preco, qtdeEstoque, estoqueMin, ativo | código único; preco > 0; estoque >= 0; FK Categoria; FK Fornecedor[cite: 30, 31] |
-| **Veiculo** | id, marca, modelo, anoInicial, anoFinal | Combinação marca/modelo/anoInicial/anoFinal é única[cite: 31] |
-| **Pedido** | id, dataPedido, status, valorTotal | Enum: CRIADO, PAGO, ENVIADO, ENTREGUE, CANCELADO; FK Cliente[cite: 29, 31] |
-| **ItemPedido**| id, quantidade, precoUnitario | qtde > 0; FK Pedido; FK Produto[cite: 29, 30] |
-
----
-
-## 7. Regras de negócio
-* Um produto não pode ser salvo com estoque negativo ou preço igual a zero.[cite: 22, 30]
-* Categorias e Fornecedores não podem ser removidos se existirem produtos vinculados a eles.[cite: 22]
-* A criação de um pedido verifica a quantidade em estoque: se a demanda for maior que o estoque, o pedido é recusado.[cite: 23]
-* Ao criar um pedido, o estoque das peças é reduzido. Se for cancelado, a quantidade volta ao estoque.[cite: 24]
-* O valor do `ItemPedido` deve ser o preço do produto **no momento da venda** (garantindo histórico).[cite: 29]
-* Pedidos finalizados (`ENTREGUE`) não podem mais ser cancelados.[cite: 24]
+    Produto "0..*" -- "0..*" Veiculo : compatível com
