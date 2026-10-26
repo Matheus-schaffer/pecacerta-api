@@ -170,7 +170,7 @@ classDiagram
     Categoria "1" -- "0..*" Produto
     Fornecedor "1" -- "0..*" Produto
     Produto "0..*" -- "0..*" Veiculo : compatível com
-    ```
+  ```
 
 ### 🔗 Mapeamento JPA
 | Relacionamento | Tipo | Anotações JPA na Camada de Persistência |
