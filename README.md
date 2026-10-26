@@ -1,10 +1,10 @@
-# 🚗 PeçaCerta — API de Gestão de Auto Peças
+#  PeçaCerta — API de Gestão de Auto Peças
 
 Projeto Final da disciplina Programação Web (foco em Backend).[cite: 20] API REST em Java + Spring Boot para controlar catálogo, estoque, compatibilidade com veículos e pedidos de uma loja de peças automotivas.[cite: 20, 21]
 
 **Status:** Etapa 1 (requisitos, modelagem e camada de persistência) — entrega em 26/10/2026, 23h59.[cite: 20]
 
-## 👥 Equipe
+##  Equipe
 | Integrante | Papel |
 | :--- | :--- |
 | **Matheus Reck Schaffer** | Líder (Responsável pelo envio)[cite: 20] |
@@ -13,7 +13,7 @@ Projeto Final da disciplina Programação Web (foco em Backend).[cite: 20] API R
 
 ---
 
-## 📑 Sumário
+##  Sumário
 1. [Visão geral](#1-visão-geral)
 2. [Tecnologias](#2-tecnologias)
 3. [Requisitos funcionais](#3-requisitos-funcionais)
@@ -172,7 +172,7 @@ classDiagram
     Produto "0..*" -- "0..*" Veiculo : compatível com
   ```
 
-### 🔗 Mapeamento JPA
+###  Mapeamento JPA
 | Relacionamento | Tipo | Anotações JPA na Camada de Persistência |
 | :--- | :--- | :--- |
 | **Usuario — Cliente** | 1:1 | `@OneToOne` em Cliente (lado dono)[cite: 27] |
