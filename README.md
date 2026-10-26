@@ -5,11 +5,14 @@ Projeto Final da disciplina Programação Web (foco em Backend).[cite: 20] API R
 **Status:** Etapa 1 (requisitos, modelagem e camada de persistência) — entrega em 26/10/2026, 23h59.[cite: 20]
 
 ##  Equipe
-| Integrante | Papel |
-| :--- | :--- |
-| **Matheus Reck Schaffer** | Líder (Responsável pelo envio)[cite: 20] |
-| **Felipe dos Santos** | Desenvolvimento[cite: 20] |
-| **Luan Ferreira do Amaral** | Desenvolvimento[cite: 20] |
+
+| Integrante | Papel | Responsabilidade |
+| :--- | :--- | :--- |
+| **Matheus Reck Schaffer** | Autenticação e Vendas | Login, JWT, permissões, criação de pedidos e regras de baixa de estoque. |
+| **Felipe dos Santos** | Catálogo e Estoque | Gestão de produtos, categorias, fornecedores e alertas de estoque mínimo. |
+| **Luan Ferreira do Amaral** | Clientes e Compatibilidade | CRUD de clientes, veículos e mapeamento de compatibilidade das peças. |
+
+> Líder do grupo (responsável pelo envio): **MATHEUS RECK SCHAFFER**.
 
 ---
 
